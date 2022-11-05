@@ -1,0 +1,66 @@
+
+.ContainerMain{
+  max-width: 1200px;
+  min-height: 100vh;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+}
+
+.HeaderContainer{
+}
+
+/*.ContainerContent{*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(3, 1fr);*/
+/*  grid-template-rows: 1fr;*/
+/*  grid-column-gap: 0px;*/
+/*  grid-row-gap: 0px;*/
+/*  padding: 20px;*/
+/*}*/
+
+/*.ContainerListNotices{*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  flex-wrap: wrap;*/
+/*  gap: 20px;*/
+/*  width: 93.3%;*/
+/*  grid-area: 1 / 1 / 2 / 3;*/
+/*}*/
+
+/*.SearchContainer {*/
+/*  width: 200px;*/
+/*  grid-area: 1 / 3 / 2 / 4;*/
+/*}*/
+
+.ContainerContent{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.ContainerListNotices{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap ;
+  gap: 20px;
+  max-width: 740px;
+}
+
+
+@media (max-width: 935px)
+{
+  .ContainerListNotices
+  {
+    justify-content: center;
+  }
+}
+@media (max-width: 570px)
+{
+  .ContainerContent{
+    flex-direction: column-reverse;
+  }
+}
