@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {INotice} from "../../interface/notice";
 
 @Component({
   selector: 'app-notice-card',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notice-card.component.css']
 })
 export class NoticeCardComponent implements OnInit {
-
+  @Input()
+  notice: INotice = {
+    createdAt: "",
+    image: "",
+    title: "",
+    body: "",
+    id: ""
+  }
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
   testeConsole(){

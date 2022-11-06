@@ -1,12 +1,32 @@
 
 <div class="ContainerMain">
-  <div class="HeaderContainer">Header</div>
+  <div class="HeaderContainer">
+    <button (click)="bleubleu()" class="buttonAddNotice"><img src="./assets/icons/iconAddWhite.svg">Nova Noticia</button>
+    <div class="showSearchResult" *ngIf="search != ''" ><h3>Exibindo resultado de busca por "{{search}}"</h3><p>Encontramos um total de {{listAllNews.length}} resultados para sua busca</p></div>
+  </div>
   <div class="ContainerContent">
     <div class="ContainerListNotices">
-      <app-notice-card *ngFor="let tes of blabla"></app-notice-card>
+      <div class="listEmpty" *ngIf="listAllNews.length === 0"><p>Lista vazia</p></div>
+      <app-notice-card *ngFor="let notice of listAllNews" [notice]="notice"></app-notice-card>
     </div>
-    <div class="SearchContainer">
-      <input type="text" name="" id="">
+    <div class="SearchContainerMain">
+      <p class="titleCategoria">Categorias</p>
+      <p class="loremCategoria"><a href="#3">Lorem ipsum color</a></p>
+      <hr class="lineGrey">
+      <p class="loremCategoria"><a href="#">Lorem ipsum color</a></p>
+      <hr class="lineGrey">
+      <p class="loremCategoria"><a href="#">Lorem ipsum color</a></p>
+      <hr class="lineGrey">
+      <p class="loremCategoria"><a href="#">Lorem ipsum color</a></p>
+      <hr class="lineGrey">
+      <div class="search-container">
+        <p class="titleCategoria">Procurando alguma noticia?</p>
+        <div>
+          <input type="text" class="search-bar" [(ngModel)]="search" (input)="searchFunc()" (beforeinput)="searchFunc()" placeholder="Pesquise por...">
+          <a href="#"><img class="search-icon" src="./assets/icons/iconSearchBar.svg"></a>
+        </div>
+
+      </div>
     </div>
 
   </div>

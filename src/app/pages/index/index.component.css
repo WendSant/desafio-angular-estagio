@@ -2,36 +2,15 @@
 .ContainerMain{
   max-width: 1200px;
   min-height: 100vh;
-  background-color: #ebebeb;
+  background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
 }
 
 .HeaderContainer{
+
+  padding: 20px;
 }
-
-/*.ContainerContent{*/
-/*  display: grid;*/
-/*  grid-template-columns: repeat(3, 1fr);*/
-/*  grid-template-rows: 1fr;*/
-/*  grid-column-gap: 0px;*/
-/*  grid-row-gap: 0px;*/
-/*  padding: 20px;*/
-/*}*/
-
-/*.ContainerListNotices{*/
-/*  display: flex;*/
-/*  flex-direction: row;*/
-/*  flex-wrap: wrap;*/
-/*  gap: 20px;*/
-/*  width: 93.3%;*/
-/*  grid-area: 1 / 1 / 2 / 3;*/
-/*}*/
-
-/*.SearchContainer {*/
-/*  width: 200px;*/
-/*  grid-area: 1 / 3 / 2 / 4;*/
-/*}*/
 
 .ContainerContent{
   display: flex;
@@ -39,28 +18,177 @@
   align-content: center;
   justify-content: center;
   padding: 20px;
-
 }
 
 .ContainerListNotices{
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap ;
   gap: 20px;
-  max-width: 740px;
+  /*Aqui mexe no bagulho de quebrar a lista*/
+  width: 70vw;
+  max-width: 720px;
+  /*max-width: 62.1%;*/
+  padding-right: 20px;
+}
+
+.titleCategoria{
+  font-weight: bold;
+  font-size: 11px;
+}
+
+.loremCategoria{
+  font-size: 13px;
+  padding: 8px 0px 8px 0px;
+}
+
+.loremCategoria a{
+  color: #6c6c6c;
+}
+
+.lineGrey{
+  background-color: #d6d6d6;
+  height: 1px;
+  border: 0;
 }
 
 
-@media (max-width: 935px)
+/*Search bar*/
+.SearchContainerMain {
+  width: 200px;
+
+}
+
+.search-container{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-bar{
+  margin-top: 8px;
+  width: 95%;
+  height: 35px;
+  padding: 0 0 0 10px;
+  font-size: 0.7rem;
+  border: 1px solid #D0CFCE;
+  border-radius: 5px;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar::placeholder{
+  font-size: 10px;
+}
+
+.search-bar:focus{
+  border: 1px solid #008ABF;
+  transition: 0.35s ease;
+  color: #008ABF;
+}
+
+.search-icon{
+  position: relative;
+  float: right;
+  width: 30px;
+  top: -35px;
+}
+
+
+.buttonAddNotice {
+  appearance: none;
+  background-color: #005dff;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.buttonAddNotice img{
+  width: 20px;
+}
+
+.buttonAddNotice:hover {
+  background-color: #0056eb;
+}
+
+.buttonAddNotice:active {
+  background-color: #002d7a;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+.listEmpty{
+  max-width: 720px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  word-break: break-word;
+}
+
+.listEmpty p{
+  text-align: center;
+  width: 70vw;
+}
+
+.showSearchResult{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media (max-width: 915px)
 {
   .ContainerListNotices
   {
-    justify-content: center;
+
+    width: 400px;
+  }
+  .SearchContainerMain{
+    width: 100%;
+  }
+  .listEmpty{
+    width: 350px;
   }
 }
 @media (max-width: 570px)
 {
   .ContainerContent{
     flex-direction: column-reverse;
+    align-content: center;
+    justify-content: center;
+    padding: 0;
+  }
+  .ContainerListNotices{
+    padding: 0;
+    width: 350px;
+  }
+  .search-icon{
+  right: 10px;
+  }
+  .HeaderContainer{
+    padding: 10px 0;
   }
 }

@@ -1,14 +1,13 @@
 <div class="card">
   <div class="card-header">
-    <img src="https://ds-images.bolavip.com/news/image?src=https%3A%2F%2Fimages.antenadosnofutebol.com.br%2Fwebp%2F20221031_ANF_30383_GettyImages-1437581886.webp&width=470&height=352"
-         alt="rover" />
+    <img src="{{notice.image}}" alt="image banner" />
   </div>
   <div class="card-body">
     <h4 class="titleNotice">
-      Coronavírus: como a doença é transmitida?
+      {{notice.title | slice:0:68}}{{notice.title.length>=68 ? '...' : ''}}
     </h4>
     <p class="description">
-      Saiba o que é o coronavírus, em quanto tempo a doença pode se manifestar e quais são os principais
+      {{notice.body| slice:0:92 }}{{notice.body.length>=92 ? '...' : ''}}
     </p>
     <p class="read-more" (click)="testeConsole()">Ler mais</p>
   </div>
