@@ -11,4 +11,9 @@
 body{
   display: flex;
   justify-content: center;
+
+}
+
+html, body{
+  scroll-behavior: smooth;
 }

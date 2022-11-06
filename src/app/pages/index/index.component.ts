@@ -24,6 +24,11 @@ export class IndexComponent implements OnInit {
     this.search = this.search.toLowerCase()
   }
 
+  goToTop(){
+    window.scrollTo(0,0);
+
+  }
+
   listAll(){
     this.noticeService.listAllNotices().subscribe((result:INotice[])=>{
     this.listAllNews = result;
