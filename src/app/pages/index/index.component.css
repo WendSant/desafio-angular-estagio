@@ -2,7 +2,6 @@
 .ContainerMain{
   max-width: 1200px;
   min-height: 100vh;
-  background-color: #fbfbfb;
   display: flex;
   flex-direction: column;
 }
