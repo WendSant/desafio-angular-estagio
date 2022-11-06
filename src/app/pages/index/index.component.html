@@ -1,7 +1,7 @@
 
 <div class="ContainerMain">
   <div class="HeaderContainer">
-    <button (click)="bleubleu()" class="buttonAddNotice"><img src="./assets/icons/iconAddWhite.svg">Nova Noticia</button>
+    <button routerLink="create" class="buttonAddNotice"><img src="./assets/icons/iconAddWhite.svg">Nova Noticia</button>
     <div class="showSearchResult" *ngIf="search != ''" ><h3>Exibindo resultado de busca por "{{search}}"</h3><p>Encontramos um total de {{listAllNews.length}} resultados para sua busca</p></div>
   </div>
   <div class="ContainerContent">

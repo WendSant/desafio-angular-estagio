@@ -7,12 +7,14 @@ import { NoticeCardComponent } from './components/notice-card/notice-card.compon
 import { IndexComponent } from './pages/index/index.component';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { CreatePostComponent } from './pages/create-post/create-post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoticeCardComponent,
-    IndexComponent
+    IndexComponent,
+    CreatePostComponent
   ],
     imports: [
         BrowserModule,
