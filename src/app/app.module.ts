@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NoticeCardComponent } from './components/notice-card/notice-card.component';
 import { IndexComponent } from './pages/index/index.component';
-import {FormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http";
 import { CreatePostComponent } from './pages/create-post/create-post.component';
 import { PostDetailsComponent } from './pages/post-details/post-details.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import {LoadingInterceptor} from "./interceptors/loading.interceptor";
 
 @NgModule({
   declarations: [
@@ -16,15 +18,19 @@ import { PostDetailsComponent } from './pages/post-details/post-details.componen
     NoticeCardComponent,
     IndexComponent,
     CreatePostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    SpinnerComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         FormsModule,
+        ReactiveFormsModule,
         HttpClientModule
     ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
