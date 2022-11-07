@@ -154,6 +154,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  word-break: break-word;
+  padding-top: 15px;
+}
+
+.showSearchResult p {
+  color: #a3a3a3;
+  box-sizing: border-box;
+  max-width: 100%;
+  text-align: center;
 }
 
 #back-to-top {
@@ -210,6 +219,7 @@
   right: 10px;
   }
   .HeaderContainer{
+    max-width: 350px;
     padding: 10px 0;
   }
 }

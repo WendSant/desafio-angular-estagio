@@ -14,4 +14,11 @@ export class NoticesServiceService {
     return this.http.get<INotice[]>(`${this.api}`)
   }
 
+  getDetailsNotice(notice: INotice){
+    return this.http.get<INotice>(`${this.api}/${notice.id}`)
+  }
+  getDetailsNoticeById(id: string){
+    return this.http.get<INotice>(`${this.api}/${id}`)
+  }
+
 }

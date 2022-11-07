@@ -26,7 +26,6 @@ export class IndexComponent implements OnInit {
 
   goToTop(){
     window.scrollTo(0,0);
-
   }
 
   listAll(){

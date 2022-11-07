@@ -1,15 +1,18 @@
 <div class="card">
   <div class="card-header">
-    <img src="{{notice.image}}" alt="image banner" />
+    <img src="{{notice.image}}" />
   </div>
   <div class="card-body">
     <h4 class="titleNotice">
-      {{notice.title | slice:0:68}}{{notice.title.length>=68 ? '...' : ''}}
+      {{notice.title | slice:0:64}}{{notice.title.length>=64 ? '...' : ''}}
     </h4>
-    <p class="description">
-      {{notice.body| slice:0:92 }}{{notice.body.length>=92 ? '...' : ''}}
-    </p>
-    <p class="read-more" (click)="testeConsole()">Ler mais</p>
+    <div class="descBody">
+      <p class="description">
+        {{notice.body| slice:0:92 }}{{notice.body.length>=92 ? '...' : ''}}
+      </p>
+      <p class="read-more" [routerLink]="['details', notice.id]">Ler mais</p>
+    </div>
+
   </div>
 </div>
 

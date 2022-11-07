@@ -3,7 +3,10 @@
   <button id="back-to-top" (click)="goToTop()"></button>
   <div class="HeaderContainer">
     <button routerLink="create" class="buttonAddNotice"><img src="./assets/icons/iconAddWhite.svg">Nova Noticia</button>
-    <div class="showSearchResult" *ngIf="search != ''" ><h3>Exibindo resultado de busca por "{{search}}"</h3><p>Encontramos um total de {{listAllNews.length}} resultados para sua busca</p></div>
+    <div class="showSearchResult" *ngIf="search != ''" >
+      <h3>Exibindo resultado de busca por "{{search}}"</h3>
+      <p>Encontramos um total de {{listAllNews.length}} resultados para sua busca</p>
+    </div>
   </div>
   <div class="ContainerContent">
     <div class="ContainerListNotices">
@@ -23,7 +26,7 @@
       <div class="search-container">
         <p class="titleCategoria">Procurando alguma noticia?</p>
         <div>
-          <input type="text" class="search-bar" [(ngModel)]="search" (input)="searchFunc()" (beforeinput)="searchFunc()" placeholder="Pesquise por...">
+          <input type="text" class="search-bar" [(ngModel)]="search" (input)="searchFunc()"  placeholder="Pesquise por...">
           <a href="#"><img class="search-icon" src="./assets/icons/iconSearchBar.svg"></a>
         </div>
 
