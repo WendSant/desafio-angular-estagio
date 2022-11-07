@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {INotice} from "../../interface/notice";
-import {NoticesServiceService} from "../../services/notices-service.service";
+import {NoticesServiceService} from "../../services/notices/notices-service.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({

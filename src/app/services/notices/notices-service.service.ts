@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {HttpClient} from "@angular/common/http";
-import {INotice} from "../interface/notice";
+import {INotice} from "../../interface/notice";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +19,10 @@ export class NoticesServiceService {
   }
   getDetailsNoticeById(id: string){
     return this.http.get<INotice>(`${this.api}/${id}`)
+  }
+
+  createNewPost(notice: INotice){
+    return this.http.post<INotice>(`${this.api}`, notice)
   }
 
 }
