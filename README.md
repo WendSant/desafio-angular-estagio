@@ -36,6 +36,5 @@
 - <p style="font-size: 15px;" >Segue os comandos para o funcionamento da aplicação</p>
 ```
 $ npm install
-$ ng build
 $ ng s
 ```
