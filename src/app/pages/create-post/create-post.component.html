@@ -6,43 +6,39 @@
   <div class="containerTeste">
     <form [formGroup]="formNotice" (ngSubmit)="salvarPost()">
       <div class="containerInput">
-        <input>
-        <label>Titulo da noticia:</label>
+        <label>Titulo da noticia : <span class="requiredField">*</span></label>
         <input
           type="text"
           placeholder="Digite o titulo da noticia"
           formControlName="title"
-          style="width: 20rem"
+
           class="inputText"
         />
       </div>
       <div class="containerInput">
-        <label>Imagem da noticia:</label>
+        <label>Imagem da noticia: <span class="requiredField">*</span></label>
         <input
           type="text"
           placeholder="Insira o link da imagem"
           formControlName="image"
           class="inputText"
-          style="width: 20rem"
         />
       </div>
       <div class="containerInput">
-        <label>Conteúdo:</label>
-        <input
-          type="text"
+        <label>Conteúdo: <span class="requiredField">*</span></label>
+        <textarea
           placeholder="Digite o conteúdo"
           formControlName="body"
-          style="width: 20rem"
-          class="inputText"
-        />
+          class="inputText inputContent"
+        ></textarea>
       </div>
       <button
-        [disabled]="!formNotice.valid"
         type="submit"
         class="buttonEnviar"
       >
-        Enviar
+        Salvar
       </button>
+      <span class="fillFields" *ngIf="emptyField"><em> *Preencha todos os campos*</em></span>
     </form>
   </div>
 </div>

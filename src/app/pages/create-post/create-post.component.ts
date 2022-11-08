@@ -3,6 +3,7 @@ import {NoticesServiceService} from "../../services/notices/notices-service.serv
 import {INotice} from "../../interface/notice";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-create-post',
@@ -19,24 +20,30 @@ export class CreatePostComponent implements OnInit {
     id: ""
   }
 
+  //Boolean para verificação dos campos
+  emptyField: boolean = false;
+
   formNotice :  FormGroup = new FormGroup({
     title: new FormControl("",Validators.required),
     image: new FormControl("",Validators.required),
     body: new FormControl("",Validators.required),
   })
 
-  constructor(private noticeService: NoticesServiceService,private router: Router) { }
+  constructor(private noticeService: NoticesServiceService,private router: Router, private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle("Criar Noticia")
   }
 
   salvarPost(){
-    const notice: INotice = this.formNotice.value;
-    let test = null;
-    this.noticeService.createNewPost(notice).subscribe(res=>{
-      this.router.navigate([`/details/${res.id}`]);
-    })
-
+    if(this.formNotice.valid) {
+      const notice: INotice = this.formNotice.value;
+      this.noticeService.createNewPost(notice).subscribe(res=>{
+        this.router.navigate([`/details/${res.id}`]);
+      })
+    }else{
+      this.emptyField = true;
+    }
   }
 
 }

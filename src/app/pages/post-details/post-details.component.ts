@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {INotice} from "../../interface/notice";
 import {NoticesServiceService} from "../../services/notices/notices-service.service";
 import {ActivatedRoute} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-post-details',
@@ -17,16 +18,16 @@ export class PostDetailsComponent implements OnInit {
     id: ""
   }
 
-  constructor(private noticeService: NoticesServiceService, private activatedRoute: ActivatedRoute) { }
+  constructor(private noticeService: NoticesServiceService, private activatedRoute: ActivatedRoute, private title: Title) { }
 
   ngOnInit(): void {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if(id){
       this.noticeService.getDetailsNoticeById(id).subscribe((result:INotice)=>{
-        this.notice = result
+        this.notice = result;
+        this.title.setTitle(result.title)
       })
     }
-
   }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NoticesServiceService} from "../../services/notices/notices-service.service";
 import {INotice} from "../../interface/notice";
+import {Title} from "@angular/platform-browser";
 
 
 @Component({
@@ -13,9 +14,10 @@ export class IndexComponent implements OnInit {
   search: string ="";
   searchList: INotice[]= [];
   listAllNews: INotice[] = []
-  constructor(private noticeService: NoticesServiceService) { }
+  constructor(private noticeService: NoticesServiceService, private title: Title) { }
 
   ngOnInit(): void {
+    this.title.setTitle("Pagina Inicial")
    this.listAll()
   }
 
@@ -38,7 +40,6 @@ export class IndexComponent implements OnInit {
   searchFunc(){
     if(this.search.length > 0){
         this.listAllNews = this.searchList.filter((arg:INotice)=>{
-          console.log(arg.title)
           if (this.search === "") {
             return arg;
           } else if (arg.title.toLowerCase().startsWith(this.search)) {
@@ -46,16 +47,11 @@ export class IndexComponent implements OnInit {
           }
           return 0;
         })
-        console.log(this.searchList.length )
       }
     if(this.search.length === 0){
       this.ngOnInit()
       this.search = ""
     }
-  }
-
-  bleubleu(){
-    console.log("clicou em adicionar")
   }
 
 }
