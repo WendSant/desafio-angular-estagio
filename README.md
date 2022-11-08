@@ -1,27 +1,41 @@
-# FrontEndAngular
+# Desafio estagio angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.9.
+[![Angular CLIVersion](https://img.shields.io/badge/angular_CLI-13.3.9-red.svg)](https://angular.io/cli)
 
-## Development server
+<div align="center">
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### O desafio proposto era a paginação responsiva com uma listagem de itens vindo de uma API e utlizar o POST para criação de uma nova notícia.
 
-## Code scaffolding
+### Deploy: https://desafio-angular-estagio.netlify.app/
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
+<p>
+    Imagem tela inicial:
+</p>
+<img src="https://user-images.githubusercontent.com/79418546/200497876-1e4f385d-b5bb-445c-b8e9-e93ed6569135.png" width="1000px">
+<img>
+<p>
+    Imagem criação de uma nova notícia:
+</p>
+<img src="https://user-images.githubusercontent.com/79418546/200498082-9cc9860a-d368-4a36-8816-a4a977d93de0.png" width="1000px">
+<img>
+<p>
+    Imagem pesquisa de uma notícia:
+</p>
+<img src="https://user-images.githubusercontent.com/79418546/200498089-d88bdc57-201d-4f83-a094-804bf8f01a65.png" width="1000px">
+<img>
 
-## Build
+</div>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+<div align="center">
 
-## Running unit tests
+### Para quem deseja rodar a aplicação em sua maquina uma breve explicação sobre como subir ela. Aplicação feita em ambiente Linux.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+</div>
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- <p style="font-size: 15px;" >Segue os comandos para o funcionamento da aplicação</p>
+```
+$ npm install
+$ ng build
+$ ng s
+```
