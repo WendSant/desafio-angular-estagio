@@ -14,7 +14,7 @@ body{
   background-color: #fbfbfb;
   min-height: 100vh;
   min-width: 100vw;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 html, body{
