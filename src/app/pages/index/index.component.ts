@@ -42,7 +42,7 @@ export class IndexComponent implements OnInit {
         this.listAllNews = this.searchList.filter((arg:INotice)=>{
           if (this.search === "") {
             return arg;
-          } else if (arg.title.toLowerCase().startsWith(this.search)) {
+          } else if (arg.title.toLowerCase().match(this.search)) {
             return arg;
           }
           return 0;
